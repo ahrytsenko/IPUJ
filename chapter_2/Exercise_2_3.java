@@ -17,6 +17,6 @@ public class Exercise_2_3 {
         System.out.print("What is your name? ");
         name = TextIO.getWord();
         
-        System.out.println("Hello, " + name + ", nice to meet you!");
+        System.out.println("Hello, " + name.toUpperCase() + ", nice to meet you!");
     }
 }
