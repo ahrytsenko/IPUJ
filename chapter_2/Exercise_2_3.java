@@ -4,6 +4,13 @@
  * The project has got no warranties.
  */
 
+/*
+Exercise 2.3:
+Write a program that asks the user's name, and then greets the user by name. 
+Before outputting the user's name, convert it to upper case letters. 
+For example, if the user's name is Fred, then the program should respond "Hello, FRED, nice to meet you!".
+*/
+
 /**
  *
  * @author ahrytsenko
