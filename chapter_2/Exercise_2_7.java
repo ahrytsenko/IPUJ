@@ -24,7 +24,17 @@ public class Exercise_2_7 {
     
     public static void main(String[] args) {
 
-        // TODO
+        String fileName = "testdata.txt";
+        String studentName;
+        int grade = 0;
+        
+        TextIO.readFile("d:\\testdata.txt");
+        studentName = TextIO.getlnString();
+        
+        for (int i=0; i<3; i++) {
+            grade += TextIO.getInt();
+        }
 
+        System.out.printf("The average grade of %s is %1.2f", studentName, (grade*1.0/3));
     }
 }
