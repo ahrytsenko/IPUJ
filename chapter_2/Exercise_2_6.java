@@ -44,7 +44,6 @@ public class Exercise_2_6 {
         else {
             firstName = fullName.trim();
             lastName = "";
-            
         }
         
         System.out.printf("Your first name is %s, which has %d characters\n", firstName, firstName.length());
@@ -55,14 +54,6 @@ public class Exercise_2_6 {
         else {
             System.out.printf("Your initials are %s\n", firstName.charAt(0).toUpperCase());
         }
-        
-        /**
-         * Please enter your first name and last name, separated by a space.
-         * ? Mary Smith
-         * Your first name is Mary, which has 4 characters
-         * Your last name is Smith, which has 5 characters
-         * Your initials are MS
-        */
-        
+
     }
 }
