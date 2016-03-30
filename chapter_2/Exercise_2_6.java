@@ -37,8 +37,8 @@ public class Exercise_2_6 {
         System.out.println("Please enter your first name and last name, separated by a space.");
         fullName = TextIO.getln();
         
-        System.out.printf("Your first name is %s, which has %d characters\n", firstName, len(firstName));
-        System.out.printf("Your last name is %s, which has %d characters\n", lastName, len(lastName));
+        System.out.printf("Your first name is %s, which has %d characters\n", firstName, firstName.length());
+        System.out.printf("Your last name is %s, which has %d characters\n", lastName, lastName.length());
         System.out.printf("Your initials are %s\n", firstName.charAt(0).toUpperCase()+lastName.charAt(0).toUpperCase());
         
         /**
