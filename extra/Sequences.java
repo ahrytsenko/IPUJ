@@ -2,8 +2,8 @@ class Sequences {
 
     public static void main(String[] args) {
         
-        public final int ATTEMPTS = 1000;
-        public final int MAX_DIE_VALUE = 6;
+        final int ATTEMPTS = 1000;
+        final int MAX_DIE_VALUE = 6;
         
         int[] oneDie = new int[MAX_DIE_VALUE];
         int[] twoDice = new int[MAX_DIE_VALUE*2];
@@ -33,7 +33,7 @@ class Sequences {
         
         System.out.println("\nTree Dice's values distribution:");
         for(int i = 0; i < threeDice.length; i++) {
-            System.out.printf("Dice value: %d - %d", (i+1), treeDice[i]);
+            System.out.printf("Dice value: %d - %d", (i+1), threeDice[i]);
         }
         
     }
