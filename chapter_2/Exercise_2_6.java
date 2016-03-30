@@ -49,10 +49,10 @@ public class Exercise_2_6 {
         System.out.printf("Your first name is %s, which has %d characters\n", firstName, firstName.length());
         System.out.printf("Your last name is %s, which has %d characters\n", lastName, lastName.length());
         if (lastName.length() != 0) {
-            System.out.printf("Your initials are %s\n", firstName.charAt(0).toUpperCase()+lastName.charAt(0).toUpperCase());
+            System.out.printf("Your initials are %s%s\n", firstName.charAt(0), lastName.charAt(0));
         }
         else {
-            System.out.printf("Your initials are %s\n", firstName.charAt(0).toUpperCase());
+            System.out.printf("Your initials are %s\n", firstName.charAt(0));
         }
 
     }
