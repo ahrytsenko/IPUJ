@@ -1,0 +1,22 @@
+Introduction to Programming Using Java, Seventh Edition
+Version 7.0, August 2014
+(Version 7.0.1, with just a few corrections, August 2015)
+
+Piece of matherial                                                      : Start date    : End date      : Duration      : 
+*************************************************************************************************************************
+Table of Contents:                                                      :               :               :               :
+Preface                                                                 : 28/03/2016    : 28/03/2016    : 1 day         :
+Chapter 1: Overview: The Mental Landscape                               : 28/03/2016    : 28/03/2016    : 1 day         :
+Chapter 2: Programming in the Small I: Names and Things                 : 28/03/2016    : 31/03/2016    : 4 days        :
+Chapter 3: Programming in the Small II: Control                         : 30/03/2016    :               :               :
+Chapter 4: Programming in the Large I: Subroutines                      :               :               :               :
+Chapter 5: Programming in the Large II: Objects and Classes             :               :               :               :
+Chapter 6: Introduction to GUI Programming                              :               :               :               :
+Chapter 7: Arrays and ArrayLists                                        :               :               :               :
+Chapter 8: Correctness, Robustness, Efficiency                          :               :               :               :
+Chapter 9: Linked Data Structures and Recursion                         :               :               :               :
+Chapter 10: Generic Programming and Collection Classes                  :               :               :               :
+Chapter 11: Advanced Input/Output: Streams, Files, and Networking       :               :               :               :
+Chapter 12: Threads and Multiprocessing                                 :               :               :               :
+Chapter 13: Advanced GUI Programming                                    :               :               :               :
+*************************************************************************************************************************
