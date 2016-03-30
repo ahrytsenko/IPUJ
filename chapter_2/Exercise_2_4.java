@@ -6,6 +6,13 @@ import java.io.PrintStream;
  * Everyone can use the project at his/her own reason.
  * The project has got no warranties.
  */
+ 
+ /*
+ Exercise 2.4:
+ Write a program that helps the user count his change. 
+ The program should ask how many quarters the user has, then how many dimes, then how many nickels, 
+ then how many pennies. Then the program should tell the user how much money he has, expressed in dollars.
+ */
 
 /**
  *
