@@ -14,26 +14,26 @@ class Sequences {
         }
 
         for(int i = 0; i < ATTEMPTS*2; i++) {
-            oneDie[getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE)]++;
+            twoDice[getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE)]++;
         }
 
         for(int i = 0; i < ATTEMPTS*3; i++) {
-            oneDie[getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE)]++;
+            threeDice[getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE) + getDieValue(MAX_DIE_VALUE)]++;
         }
         
         System.out.println("One Die's values distribution:");
         for(int i = 0; i < oneDie.length; i++) {
-            System.out.printf("Die value: %d - %d", (i+1), oneDie[i]);
+            System.out.printf("Die value: %d - %d\n", (i+1), oneDie[i]);
         }
         
         System.out.println("\nTwo Dice's values distribution:");
         for(int i = 0; i < twoDice.length; i++) {
-            System.out.printf("Dice value: %d - %d", (i+1), twoDice[i]);
+            System.out.printf("Dice value: %d - %d\n", (i+1), twoDice[i]);
         }
         
         System.out.println("\nTree Dice's values distribution:");
         for(int i = 0; i < threeDice.length; i++) {
-            System.out.printf("Dice value: %d - %d", (i+1), threeDice[i]);
+            System.out.printf("Dice value: %d - %d\n", (i+1), threeDice[i]);
         }
         
     }
