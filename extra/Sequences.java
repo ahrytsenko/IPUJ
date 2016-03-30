@@ -39,6 +39,6 @@ class Sequences {
     }
     
     public static int getDieValue(int maxValue) {
-        return ((int)(Math.random()*maxValue))+1;
+        return (int)(Math.random()*maxValue);
     }
 }
