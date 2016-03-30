@@ -21,7 +21,7 @@ public class Exercise_2_6 {
         
         System.out.printf("Your first name is %s, which has %d characters\n", firstName, len(firstName));
         System.out.printf("Your last name is %s, which has %d characters\n", lastName, len(lastName));
-        System.out.printf("Your initials are %s\n", );
+        System.out.printf("Your initials are %s\n", firstName.charAt(0).toUpperCase()+lastName.charAt(0).toUpperCase());
         
         /**
          * Please enter your first name and last name, separated by a space.
