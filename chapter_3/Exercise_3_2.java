@@ -39,7 +39,7 @@ class Exercise_3_2 {
             }
         }
         
-        System.out.printf("In the range between %d and %d the largest integer which has maximum number of divisors is: ", START_INT, STOP_INT, maxDivisorsPossessor);
+        System.out.printf("In the range between %d and %d the smallest integer which has maximum number of divisors is: ", START_INT, STOP_INT, maxDivisorsPossessor);
         System.out.printf("The maximum number of divisors for that integer is: ", maxDivisors);
     }
     
