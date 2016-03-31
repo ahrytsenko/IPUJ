@@ -5,26 +5,22 @@
  */
  
  /*
-Exercise 3.2:
-Which integer between 1 and 10000 has the largest number of divisors, and how many divisors does it have? 
-Write a program to find the answers and print out the results. 
-It is possible that several integers in this range have the same, maximum number of divisors. 
-Your program only has to print out one of them. An example in Subsection 3.4.2 discussed divisors. 
-The source code for that example is CountDivisors.java.
-You might need some hints about how to find a maximum value. 
-The basic idea is to go through all the integers, keeping track of the largest number of divisors that you've seen so far. 
-Also, keep track of the integer that had that number of divisors.
+Exercise 3.3:
+Write a program that will evaluate simple expressions such as 17 + 3 and 3.14159 * 4.7. 
+The expressions are to be typed in by the user. 
+The input always consists of a number, followed by an operator, followed by another number. 
+The operators that are allowed are +, -, *, and /. 
+You can read the numbers with TextIO.getDouble() and the operator with TextIO.getChar(). 
+Your program should read an expression, print its value, read another expression, print its value, and so on. 
+The program should end when the user enters 0 as the first number on the line.
 */
 
 /**
  *
  * @author ahrytsenko
  */
-class Exercise_3_2 {
+class Exercise_3_3 {
     
-    public static final int START_INT = 1;
-    public static final int STOP_INT = 10000;
-
     public static void main(String[] args) {
         
         int maxDivisorsPossessor = 0;
