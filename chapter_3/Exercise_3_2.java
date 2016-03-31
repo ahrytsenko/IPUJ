@@ -22,5 +22,38 @@ Also, keep track of the integer that had that number of divisors.
  * @author ahrytsenko
  */
 class Exercise_3_2 {
+    
+    public static final int START_INT = 1;
+    public static final int STOP_INT = 10000;
 
+    public static void main(String[] args) {
+        
+        int maxDivisorsPossessor = 0;
+        int divisorsCount = 0;
+        
+        for (int i = START_INT; i <= STOP_INT; i++) {
+            int divisors = countDivisors(i);
+            if (divisors > divisorsCount) {
+                divisorsCount++;
+                maxDivisorsPossessor = i;
+            }
+        }
+        
+        System.out.printf("In the range between %d and %d the largest integer which has maximum number of divisors is: ", START_INT, STOP_INT, maxDivisorsPossessor);
+        System.out.printf("The maximum number of divisors for that integer is: ", maxDivisors);
+    }
+    
+    public static int countDivisors(int number) {
+        
+        // Proceed only positive numbers
+        if (number <= 0)
+            return 0;
+            
+        int result = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0)
+                result++;
+        }
+        return result;
+    }
 }
