@@ -22,13 +22,14 @@ public class Exercise_3_1 {
     
     public static void main(String[] args) {
         
-        int die1 = (int)(Math.random()*6) + 1;
-        int die2 = (int)(Math.random()*6) + 1;
+        int count = 0;
         
-        System.out.printf("The first die comes up %d\n", die1);
-        System.out.printf("The second die comes up %d\n", die2);
-        System.out.printf("Your total roll is %d\n", die1+die2);
+        while (((int)(Math.random()*6) + 1) != 1 || (((int)(Math.random()*6) + 1) != 1)) {
+            count++;
+        }
         
+        System.out.printf("Now \"Snake eyes\" appear after %d appempts\n", count);
+
     }
     
 }
