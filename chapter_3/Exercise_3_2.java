@@ -11,7 +11,6 @@ Write a program to find the answers and print out the results.
 It is possible that several integers in this range have the same, maximum number of divisors. 
 Your program only has to print out one of them. An example in Subsection 3.4.2 discussed divisors. 
 The source code for that example is CountDivisors.java.
-
 You might need some hints about how to find a maximum value. 
 The basic idea is to go through all the integers, keeping track of the largest number of divisors that you've seen so far. 
 Also, keep track of the integer that had that number of divisors.
@@ -34,13 +33,13 @@ class Exercise_3_2 {
         for (int i = START_INT; i <= STOP_INT; i++) {
             int divisors = countDivisors(i);
             if (divisors > divisorsCount) {
-                divisorsCount++;
+                divisorsCount = divisors;
                 maxDivisorsPossessor = i;
             }
         }
         
-        System.out.printf("In the range between %d and %d the smallest integer which has maximum number of divisors is: ", START_INT, STOP_INT, maxDivisorsPossessor);
-        System.out.printf("The maximum number of divisors for that integer is: ", maxDivisors);
+        System.out.printf("In the range between %d and %d the smallest integer which has maximum number of divisors is: %d\n", START_INT, STOP_INT, maxDivisorsPossessor);
+        System.out.printf("The maximum number of divisors for that integer is: %d\n", divisorsCount);
     }
     
     public static int countDivisors(int number) {
@@ -51,7 +50,7 @@ class Exercise_3_2 {
             
         int result = 0;
         for (int i = 1; i <= number; i++) {
-            if (number % i == 0)
+            if (0 == (number % i))
                 result++;
         }
         return result;
