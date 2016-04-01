@@ -26,5 +26,21 @@ This works for any Unicode character.
 */
 
 class Exercise_3_4 {
-  
+    
+    public static void main(String[] args) {
+        
+        String inputString;
+        
+        System.out.println("Enter your string, please.");
+        inputString = TextIO.getln();
+        
+    }
+
+    public static void getWord(String value) {
+        
+        String aWord;
+        
+        
+    }
+
 }
