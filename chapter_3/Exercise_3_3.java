@@ -22,33 +22,44 @@ The program should end when the user enters 0 as the first number on the line.
 class Exercise_3_3 {
     
     public static void main(String[] args) {
+
+        double firstNum, secondNum;
+        char operator;
         
-        int maxDivisorsPossessor = 0;
-        int divisorsCount = 0;
-        
-        for (int i = START_INT; i <= STOP_INT; i++) {
-            int divisors = countDivisors(i);
-            if (divisors > divisorsCount) {
-                divisorsCount++;
-                maxDivisorsPossessor = i;
+        System.out.println("I can compute a simple math expression like \"firstNum (operator) secondNum\"");
+        System.out.println("Here operator can be + - / or *");
+        System.out.println("If you whant to stop just enter 0 as first number");
+
+        while (true) {
+            System.out.print("Enter first number: ");
+            firstNum = TextIO.getDouble();
+            if (firstNum == 0) break;
+            
+            System.out.print("\nEnter operator: ");
+            operator = TextIO.getChar();
+            
+            System.out.print("\nEnter second number: ");
+            secondNum = TextIO.getDouble();
+            
+            switch (operator) {
+                '+': System.out.printf("%f + %f = %f", firstNum, secondNum, (firstNum + secondNum));
+                     break;
+                '-': System.out.printf("%f - %f = %f", firstNum, secondNum, (firstNum - secondNum));
+                     break;
+                '*': System.out.printf("%f * %f = %f", firstNum, secondNum, (firstNum * secondNum));
+                     break;
+                '/': if (secondNum != 0) {
+                        System.out.printf("%f / %f = %f", firstNum, secondNum, (firstNum / secondNum));
+                     }
+                     else {
+                        System.out.println("Division by zero is impossible.");
+                     }
+                     break;
+                default: System.out.println("Unknown operator. Calculation is impossible.");
             }
+            
         }
         
-        System.out.printf("In the range between %d and %d the largest integer which has maximum number of divisors is: ", START_INT, STOP_INT, maxDivisorsPossessor);
-        System.out.printf("The maximum number of divisors for that integer is: ", maxDivisors);
     }
     
-    public static int countDivisors(int number) {
-        
-        // Proceed only positive numbers
-        if (number <= 0)
-            return 0;
-            
-        int result = 0;
-        for (int i = 1; i <= number; i++) {
-            if (number % i == 0)
-                result++;
-        }
-        return result;
-    }
 }
