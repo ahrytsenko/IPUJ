@@ -28,27 +28,29 @@ class Exercise_3_3 {
         
         System.out.println("I can compute a simple math expression like \"firstNum (operator) secondNum\"");
         System.out.println("Here operator can be + - / or *");
-        System.out.println("If you whant to stop just enter 0 as first number");
 
         while (true) {
+            System.out.println("\nIf you whant to stop just enter 0 as first number");
             System.out.print("Enter first number: ");
             firstNum = TextIO.getDouble();
             if (firstNum == 0) break;
             
-            System.out.print("\nEnter operator: ");
+            System.out.print("Enter operator: ");
             operator = TextIO.getChar();
             
-            System.out.print("\nEnter second number: ");
+            System.out.print("Enter second number: ");
             secondNum = TextIO.getDouble();
             
             switch (operator) {
-                '+': System.out.printf("%f + %f = %f", firstNum, secondNum, (firstNum + secondNum));
+                case '+': {
+                    System.out.printf("%f + %f = %f", firstNum, secondNum, (firstNum + secondNum));
+                    break;
+                }
+                case '-': System.out.printf("%f - %f = %f", firstNum, secondNum, (firstNum - secondNum));
                      break;
-                '-': System.out.printf("%f - %f = %f", firstNum, secondNum, (firstNum - secondNum));
+                case '*': System.out.printf("%f * %f = %f", firstNum, secondNum, (firstNum * secondNum));
                      break;
-                '*': System.out.printf("%f * %f = %f", firstNum, secondNum, (firstNum * secondNum));
-                     break;
-                '/': if (secondNum != 0) {
+                case '/': if (secondNum != 0) {
                         System.out.printf("%f / %f = %f", firstNum, secondNum, (firstNum / secondNum));
                      }
                      else {
