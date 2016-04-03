@@ -34,6 +34,10 @@ import javax.swing.*;
  */
 public class Exercise_3_8 extends JPanel implements ActionListener {
 
+    public static final int _WIDTH_ = 400;
+    public static final int _HEIGHT_ = 400;
+    public static final String _TITLE_ = "Exercise_3_8";
+    
     /**
      * Draws one frame of an animation. This subroutine is called re
      * second and is responsible for redrawing the entire drawing area.  The
@@ -72,7 +76,7 @@ public class Exercise_3_8 extends JPanel implements ActionListener {
         /* NOTE:  The string in the following statement goes in the title bar
          * of the window.
          */
-        JFrame window = new JFrame("Exercise_3_8");
+        JFrame window = new JFrame(_TITLE_);
         
         /*
          * NOTE: If you change the name of this class, you must change
@@ -87,7 +91,7 @@ public class Exercise_3_8 extends JPanel implements ActionListener {
          * initial width and height of the drawing array.  You can change
          * these numbers to get a different size.
          */
-        drawingArea.setPreferredSize(new Dimension(400,400));
+        drawingArea.setPreferredSize(new Dimension(_WIDTH_, _HEIGHT_));
 
         window.pack();
         window.setLocation(100,50);
