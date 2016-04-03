@@ -5,23 +5,44 @@
  */
 
 /*
-Exercise 3.8:
-Write a GUI program that draws a checkerboard. Base your solution on the sample 
-program SimpleAnimationStarter.java, even though you are creating only a static 
-picture rather than an animation. You will draw the checkerboard in 
-the drawFrame() subroutine. You should read the comments in the file to discover 
-other changes that you might need to make.
+Exercise 3.9:
+Often, some element of an animation repeats over and over, every so many frames. 
+Sometimes, the repetition is "cyclic," meaning that at the end it jumps back to the start. 
+Sometimes the repetition is "oscillating," like a back-and-forth motion 
+where the second half is the same as the first half played in reverse.
 
-Assume that the size of the drawing area is 400-by-400 pixels. A checkerboard 
-contains 8 rows and 8 columns of squares. If the size of the drawing area is 400, 
-that means that each square can be 50-by-50 pixels. The squares are red and black 
-(or whatever other colors you choose). Here is a tricky way to determine 
-whether a given square should be red or black: The rows and columns can be thought 
-of as numbered from 0 to 7. If the row number of the square and the column number 
-of the square are either both even or both odd, then the square is red. 
-Otherwise, it is black. Note that a square is just a rectangle 
-in which the height is equal to the width, 
-so you can use the subroutine g.fillRect() to draw the squares
+Write an animation that demonstrates both cyclic and oscillating motions at various speeds. 
+For cyclic motion, you can use a square that moves across the drawing area, 
+then jumps back to the start, and then repeats the same motion over and over. 
+For oscillating motion, you can do something similar, 
+but the square should move back and forth between the two edges of the drawing area; 
+that is, it moves left-to-right during the first half of the animation 
+and then backwards from right-to-left during the second half. 
+To write the program, you can start with a copy of the sample program SimpleAnimationStarter.java, 
+as in the previous exercise.
+
+A cyclic motion has to repeat every N frames for some value of N. 
+What you draw in some frame of the animation depends on the frameNumber. 
+The frameNumber just keeps increasing forever. 
+To implement cyclic motion, what you really want is a "cyclic frame number" 
+that takes on the values 0, 1, 2, ..., (N-1), 0, 1, 2, ..., (N-1), 0, 1, 2, .... 
+You can derive the value that you need from frameNumber simply by saying
+
+cyclicFrameNumber = frameNumber % N;
+Then, you just have to base what you draw on cyclicFrameNumber instead of on frameNumber. 
+Similarly, for an oscillating animation, you need an "oscillation frame number" 
+that takes on the values 0, 1, 2, ... (N-1), N, (N-1), (N-2), ... 2, 1, 0, 1, 2, 
+and so on, repeating the back and forth motion forever. 
+You can compute the value that you need with
+
+oscilationFrameNumber = frameNumber % (2*N);
+if (oscillationFrameNumber > N)
+   oscillationFrameNumber = (2*N) - oscillationFrameNumber;
+Here is a screen shot from my version of the program. 
+I use six squares. The top three do cyclic motion at various speeds, 
+while the bottom three do oscillating motion. 
+I drew black lines across the drawing area to separate the squares 
+and to give them "channels" to move in.
 */
 
 import java.awt.*;
@@ -34,10 +55,24 @@ import javax.swing.*;
  */
 public class Exercise_3_9 extends JPanel implements ActionListener {
 
-    public static final int _WIDTH_ = 400;
-    public static final int _HEIGHT_ = 400;
-    public static final String _TITLE_ = "Exercise_3_8";
+    public static final int _WIDTH_ = 600;
+    public static final int _HEIGHT_ = 300;
+    public static final String _TITLE_ = "Exercise_3_9";
     
+    public static final int framesPerSecond = 50;
+    public static final int stripesCount = 6;
+    public static final int[][] stripesParams = {
+        {15, 1},
+        {15, 2},
+        {15, 3},
+        {15, 4},
+        {15, 5},
+        {15, 6}};
+    public static final Color[] stripesColor = {
+        Color.RED, Color.GREEN, Color.BLUE,
+        Color.CYAN, Color.MAGENTA, Color.YELLOW};
+    
+    public static int cIndex = 0;
     /**
      * Draws one frame of an animation. This subroutine is called re
      * second and is responsible for redrawing the entire drawing area.  The
@@ -49,6 +84,14 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
      */
     public void drawFrame(Graphics g, int frameNumber, int width, int height) {
         
+        if (frameNumber % framesPerSecond == 0) {
+            cIndex = (++cIndex) % 6;
+            //g.setColor(stripesColor[frameNumber % 6]);
+            //g.fillRect(0, 0, width, height);
+        }
+        g.setColor(stripesColor[cIndex]);
+        g.fillRect(0, 0, width, height);
+        /*
         int x, y = 0;
         int w = width/8, h = height/8;
         
@@ -66,6 +109,8 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
             }
             y += h;
         }
+        
+        */
     }
     
     //------ Implementation details: DO NOT EXPECT TO UNDERSTAND THIS ------
@@ -82,7 +127,7 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
          * NOTE: If you change the name of this class, you must change
          * the name of the class in the next line to match!
          */
-        Exercise_3_8 drawingArea = new Exercise_3_8();
+        Exercise_3_9 drawingArea = new Exercise_3_9();
         
         drawingArea.setBackground(Color.WHITE);
         window.setContentPane(drawingArea);
