@@ -11,7 +11,8 @@ class N3plus1 {
         startValue = intValue;
         
         // Stop execution if entered value less or equal to zero
-        if (intValue <= 0) System.exit(1);
+        if (intValue <= 0) 
+            throw new IllegalArgumentException( "Starting value must be positive." );
         
         System.out.println("\nSequence is:");
         
