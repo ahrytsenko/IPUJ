@@ -61,11 +61,11 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
     
     public static final int framesPerSecond = 50;
     public static final int stripesCount = 6;
-    public static final int[][] stripesParams = {{15, 1}, {15, 2}, {15, 3}, {15, 4}, {15, 5}, {15, 6}};
     public static final Color[] stripesColor = {
         Color.RED, Color.GREEN, Color.BLUE,
         Color.CYAN, Color.MAGENTA, Color.YELLOW};
-    public static int cIndex = 0;
+    public static int[][] stripesParams = {{15, 2, 0}, {15, 2, 0}, {15, 6, 0}, {15, 6, 0}, {15, 15, 0}, {15, 15, 0}};
+    public static int stripesSpeed = 15;
 
     /**
      * Draws one frame of an animation. This subroutine is called re
@@ -82,6 +82,9 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
         int x = 0;
         int h = height / stripesCount;
         
+        // Draw empty field and lanes
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, width, height);
         g.setColor(Color.BLACK);
         g.drawRect(0, 0, width, height);
         for (int i = 0; i < stripesCount; i++) {
@@ -89,11 +92,15 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
             y += h;
         }
         
+        // Draw stripes
         y = 0;
         for (int i = 0; i < stripes.Count; i++) {
             g.setColor(stripesColor[i]);
-            g.fillRect(x, y, stripesParams[i][0], h);
+            g.fillRect(stripesParams[i][2], y, stripesParams[i][0], h);
             y += h;
+            if (frameNumber % stripesParams[i][1] == 0) {
+                stripesParams[i][2] = (stripesParams[i][2] + stripesSpeed) % width;
+            }
         }
         
     }
