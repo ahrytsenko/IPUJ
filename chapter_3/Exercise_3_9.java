@@ -78,33 +78,24 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
      */
     public void drawFrame(Graphics g, int frameNumber, int width, int height) {
         
-        if (frameNumber % framesPerSecond == 0) {
-            cIndex = (++cIndex) % 6;
-            //g.setColor(stripesColor[frameNumber % 6]);
-            //g.fillRect(0, 0, width, height);
-        }
-        g.setColor(stripesColor[cIndex]);
-        g.fillRect(0, 0, width, height);
-        /*
-        int x, y = 0;
-        int w = width/8, h = height/8;
+        int y = 0;
+        int x = 0;
+        int h = height / stripesCount;
         
-        for (int i = 0; i < 8; i++) {
-            x = 0;
-            for (int j = 0; j < 8; j++) {
-                if (((i % 2) + (j % 2)) % 2 == 0) {
-                    g.setColor(Color.RED);
-                }
-                else {
-                    g.setColor(Color.BLACK);
-                }
-                g.fillRect(x, y, w, h);
-                x += w;
-            }
+        g.setColor(Color.BLACK);
+        g.drawRect(0, 0, width, height);
+        for (int i = 0; i < stripesCount; i++) {
+            g.drawLine(x, y, x+width, y);
             y += h;
         }
         
-        */
+        y = 0;
+        for (int i = 0; i < stripes.Count; i++) {
+            g.setColor(stripesColor[i]);
+            g.fillRect(x, y, stripesParams[i][0], h);
+            y += h;
+        }
+        
     }
     
     //------ Implementation details: DO NOT EXPECT TO UNDERSTAND THIS ------
