@@ -8,7 +8,7 @@ Table of Contents:                                                      :       
 Preface                                                                 : 28/03/2016    : 28/03/2016    : 1 day         :
 Chapter 1: Overview: The Mental Landscape                               : 28/03/2016    : 28/03/2016    : 1 day         :
 Chapter 2: Programming in the Small I: Names and Things                 : 28/03/2016    : 30/03/2016    : 3 days        :
-Chapter 3: Programming in the Small II: Control                         : 29/03/2016    :               :               :
+Chapter 3: Programming in the Small II: Control                         : 29/03/2016    : 03/04/2016    : 6 days        :
 Chapter 4: Programming in the Large I: Subroutines                      : 31/03/2016    :               :               :
 Chapter 5: Programming in the Large II: Objects and Classes             :               :               :               :
 Chapter 6: Introduction to GUI Programming                              :               :               :               :
