@@ -61,18 +61,12 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
     
     public static final int framesPerSecond = 50;
     public static final int stripesCount = 6;
-    public static final int[][] stripesParams = {
-        {15, 1},
-        {15, 2},
-        {15, 3},
-        {15, 4},
-        {15, 5},
-        {15, 6}};
+    public static final int[][] stripesParams = {{15, 1}, {15, 2}, {15, 3}, {15, 4}, {15, 5}, {15, 6}};
     public static final Color[] stripesColor = {
         Color.RED, Color.GREEN, Color.BLUE,
         Color.CYAN, Color.MAGENTA, Color.YELLOW};
-    
     public static int cIndex = 0;
+
     /**
      * Draws one frame of an animation. This subroutine is called re
      * second and is responsible for redrawing the entire drawing area.  The
