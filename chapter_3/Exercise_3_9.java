@@ -65,8 +65,7 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
         Color.RED, Color.GREEN, Color.BLUE,
         Color.CYAN, Color.MAGENTA, Color.YELLOW};
     public static int[][] stripesParams = {{15, 2, 0}, {15, 2, 0}, {15, 6, 0}, {15, 6, 0}, {15, 15, 0}, {15, 15, 0}};
-    public static int stripesSpeed = 15;
-
+    
     /**
      * Draws one frame of an animation. This subroutine is called re
      * second and is responsible for redrawing the entire drawing area.  The
@@ -82,7 +81,7 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
         int x = 0;
         int h = height / stripesCount;
         
-        // Draw empty field and lanes
+        // Draw an empty field and lanes
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, width, height);
         g.setColor(Color.BLACK);
@@ -99,7 +98,7 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
             g.fillRect(stripesParams[i][2], y, stripesParams[i][0], h);
             y += h;
             if (frameNumber % stripesParams[i][1] == 0) {
-                stripesParams[i][2] = (stripesParams[i][2] + stripesSpeed) % width;
+                stripesParams[i][2] = (stripesParams[i][2] + 1) % width;
             }
         }
         
