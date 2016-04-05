@@ -20,3 +20,4 @@ Chapter 11: Advanced Input/Output: Streams, Files, and Networking       :       
 Chapter 12: Threads and Multiprocessing                                 :               :               :               :
 Chapter 13: Advanced GUI Programming                                    :               :               :               :
 *************************************************************************************************************************
+                                                                        : 28/03/2016    :               : 9 days (by 05/04/2016)
