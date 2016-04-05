@@ -94,7 +94,7 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
         
         // Draw stripes
         y = 0;
-        for (int i = 0; i < stripes.Count; i++) {
+        for (int i = 0; i < stripesCount; i++) {
             g.setColor(stripesColor[i]);
             g.fillRect(stripesParams[i][2], y, stripesParams[i][0], h);
             y += h;
