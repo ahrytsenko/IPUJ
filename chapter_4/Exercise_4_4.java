@@ -21,7 +21,7 @@ public class Exercise_4_4 {
     public static double takeExperiment(int attempts, int desiredValue) {
         double average = 0;
         for (int j = 0; j < attempts; j++) {
-            average += rollDice(desiredValue) / (attempts * 1.0);
+            average += (double)rollDice(desiredValue) / attempts;
         }
         return average;
     }
