@@ -13,15 +13,15 @@ class Exercise_4_1 {
         for (int i = 0; i < string.length(); i++) {
             if (Character.isLetter(string.charAt(i))) {
                 if (firstLetter) {
-                    System.out.print(string.charAt(i).toUppercase());
+                    System.out.print(Character.toUppercase(string.charAt(i)));
                     firstLetter = false;
                 }
                 else {
-                    System.out.print(string.charAt(i);
+                    System.out.print(string.charAt(i));
                 }
             }
             else {
-                System.out.print(string.charAt(i);
+                System.out.print(string.charAt(i));
                 firstLetter = true;
             }
         }
