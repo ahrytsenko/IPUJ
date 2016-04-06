@@ -1,3 +1,13 @@
+/*
+ * This project is a study purpose project.
+ * Everyone can use the project at his/her own reason.
+ * The project has got no warranties.
+ */
+
+/**
+ *
+ * @author ahrytsenko
+ */
 class Exercise_4_1 {
 
     public static void main(String[] args) {
@@ -21,6 +31,13 @@ class Exercise_4_1 {
         
         for (int i = 0; i < string.length(); i++) {
             
+            if (firstLetter)
+                System.out.print(Character.toUpperCase(string.charAt(i)));
+            else
+                System.out.print(string.charAt(i));
+            
+            firstLetter = !Character.isLetter(string.charAt(i));
+            /*
             // If current character is a letter
             if (Character.isLetter(string.charAt(i))) {
                 
@@ -28,7 +45,7 @@ class Exercise_4_1 {
                 if (firstLetter) {
                     
                     // print capitalized character
-                    System.out.print(Character.toUppercase(string.charAt(i)));
+                    System.out.print(Character.toUpperCase(string.charAt(i)));
                     // and put flag down
                     firstLetter = false;
                 }
@@ -47,6 +64,8 @@ class Exercise_4_1 {
                 // and rise the flag
                 firstLetter = true;
             }
+                    
+                    */
         }
         System.out.println();
     }
