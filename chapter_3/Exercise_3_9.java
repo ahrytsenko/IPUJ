@@ -55,8 +55,8 @@ import javax.swing.*;
  */
 public class Exercise_3_9 extends JPanel implements ActionListener {
 
-    public static final int _WIDTH_ = 600;
-    public static final int _HEIGHT_ = 300;
+    public static final int _WIDTH_ = 615;
+    public static final int _HEIGHT_ = 240;
     public static final String _TITLE_ = "Exercise_3_9";
     
     public static final int framesPerSecond = 50;
@@ -64,8 +64,12 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
     public static final Color[] stripesColor = {
         Color.RED, Color.GREEN, Color.BLUE,
         Color.CYAN, Color.MAGENTA, Color.YELLOW};
-    public static int[][] stripesParams = {{15, 2, 0}, {15, 2, 0}, {15, 6, 0}, {15, 6, 0}, {15, 15, 0}, {15, 15, 0}};
-    
+    public static int[][] stripesParams = { // {width, frames, currentFrame}
+        {15,  600, 1}, {15,  600, 1}, 
+        {15,  300, 2}, {15,  300, 2}, 
+        {15,  100, 6}, {15,  100, 6}};
+    public static int stripesSpeed = 1;
+
     /**
      * Draws one frame of an animation. This subroutine is called re
      * second and is responsible for redrawing the entire drawing area.  The
@@ -81,25 +85,36 @@ public class Exercise_3_9 extends JPanel implements ActionListener {
         int x = 0;
         int h = height / stripesCount;
         
-        // Draw an empty field and lanes
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, width, height);
+        // Draw even stripes
+        for (int i = 0; i < stripesCount; i++) {
+            x = frameNumber % stripesParams[i][1];
+            g.setColor(stripesColor[i]);
+            g.fillRect(x*stripesParams[i][2], y, stripesParams[i][0], h);
+            y += h*2;
+            i++;
+        }
+        
+        // Draw odd stripes
+        y = h;
+        for (int i = 1; i < stripesCount; i++) {
+            x = frameNumber % (stripesParams[i][1]*2);
+            if (x > stripesParams[i][1]) 
+                x = stripesParams[i][1]*2 - x;
+            g.setColor(stripesColor[i]);
+            g.fillRect(x*stripesParams[i][2], y, stripesParams[i][0], h);
+            y += h*2;
+            i++;
+        }
+        
+        // Draw empty field and lanes
+//        g.setColor(Color.WHITE);
+//        g.fillRect(0, 0, width, height);
+        y = 0; x = 0;
         g.setColor(Color.BLACK);
-        g.drawRect(0, 0, width, height);
+        g.drawRect(0, 0, width-1, height-1);
         for (int i = 0; i < stripesCount; i++) {
             g.drawLine(x, y, x+width, y);
             y += h;
-        }
-        
-        // Draw stripes
-        y = 0;
-        for (int i = 0; i < stripesCount; i++) {
-            g.setColor(stripesColor[i]);
-            g.fillRect(stripesParams[i][2], y, stripesParams[i][0], h);
-            y += h;
-            if (frameNumber % stripesParams[i][1] == 0) {
-                stripesParams[i][2] = (stripesParams[i][2] + 1) % width;
-            }
         }
         
     }
