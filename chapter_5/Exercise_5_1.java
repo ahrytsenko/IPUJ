@@ -15,6 +15,15 @@ public class Exercise_5_1 {
         System.out.println(dice);
         dice.roll();
         System.out.println(dice);
+        
+        int attempts = 0;
+        do {
+            dice.roll();
+            attempts++;
+            System.out.println(dice);
+        } while (dice.getDie1()!=2 || dice.getDie2()!=2);
+        System.out.println("It took "+Integer.toString(attempts)+
+                " attepmts to get two dice of 2");
     }
 }
 
