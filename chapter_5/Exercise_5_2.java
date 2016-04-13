@@ -10,7 +10,8 @@
  */
 public class Exercise_5_2 extends StatCalc {
     
-    private double min, max; // Contain min and max among entered values
+    private double min = Double.POSITIVE_INFINITY; // Contain min among entered values
+    private double max = Double.NEGATIVE_INFINITY; // Contain max among entered values
     
     /**
      * Returns min among entered values.
@@ -32,15 +33,9 @@ public class Exercise_5_2 extends StatCalc {
     
     @Override
     public void enter(double num) {
-        if (getCount() == 0) {
-            min = num;
-            max = num;
-        }
-        else {
-            if (num < min) min = num;
-            if (num > max) max = num;
-        }
         super.enter(num);
+        if (num < min) min = num;
+        if (num > max) max = num;
     }
     
     @Override
