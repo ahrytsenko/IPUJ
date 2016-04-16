@@ -10,8 +10,8 @@ Chapter 1: Overview: The Mental Landscape                               : 28/03/
 Chapter 2: Programming in the Small I: Names and Things                 : 28/03/2016    : 30/03/2016    : 3 days        :
 Chapter 3: Programming in the Small II: Control                         : 29/03/2016    : 03/04/2016    : 6 days        :
 Chapter 4: Programming in the Large I: Subroutines                      : 31/03/2016    : 09/04/2016    : 10 days       :
-Chapter 5: Programming in the Large II: Objects and Classes             : 08/04/2016    :               : 7 days        :
-Chapter 6: Introduction to GUI Programming                              :               :               :               :
+Chapter 5: Programming in the Large II: Objects and Classes             : 08/04/2016    : 16/04/2016    : 9 days        :
+Chapter 6: Introduction to GUI Programming                              : 16/04/2016    :               : 1 day         :
 Chapter 7: Arrays and ArrayLists                                        :               :               :               :
 Chapter 8: Correctness, Robustness, Efficiency                          :               :               :               :
 Chapter 9: Linked Data Structures and Recursion                         :               :               :               :
@@ -20,4 +20,4 @@ Chapter 11: Advanced Input/Output: Streams, Files, and Networking       :       
 Chapter 12: Threads and Multiprocessing                                 :               :               :               :
 Chapter 13: Advanced GUI Programming                                    :               :               :               :
 *************************************************************************************************************************
-                                                                        : 28/03/2016    :               : 18 days (by 14/04/2016)
+                                                                        : 28/03/2016    :               : 20 days (by 16/04/2016)
