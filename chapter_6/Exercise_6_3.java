@@ -35,15 +35,11 @@ public class Exercise_6_3 extends JPanel implements MouseListener, MouseMotionLi
         dice[1] = new Die(Color.WHITE, Color.BLACK, new Point(55, 55), new Dimension(35, 35));
     }
     
-    private void drawDice(Graphics g) {
-        dice[0].draw(g, (int)(Math.random()*6 + 1));
-        dice[1].draw(g, (int)(Math.random()*6 + 1));
-    }
-    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        drawDice(g);
+        dice[0].draw(g, (int)(Math.random()*6 + 1));
+        dice[1].draw(g, (int)(Math.random()*6 + 1));
     }
     
     @Override
@@ -82,10 +78,25 @@ public class Exercise_6_3 extends JPanel implements MouseListener, MouseMotionLi
         }
         
         public void draw(Graphics g, int val) {
-            g.setColor(color);
+            g.setColor(colorBG);
             g.fillRect(pos.x, pos.y, size.width, size.height);
-            g.setColor(Color.BLACK);
+            g.setColor(colorFG);
             g.drawRect(pos.x, pos.y, size.width, size.height);
+            if (val > 1) {
+                g.fillOval(size.width/4, size.height/4, size.width/8, size.height/8);
+            }
+            if (val > 3) {
+                g.fillOval(size.width/4*3, size.height/4, size.width/8, size.height/8);
+                g.fillOval(size.width/4, size.height/4*3, size.width/8, size.height/8);
+                g.fillOval(size.width/4*3, size.height/4*3, size.width/8, size.height/8);
+            }
+            if (val == 6) {
+                g.fillOval(size.width/4, size.height/2, size.width/8, size.height/8);
+                g.fillOval(size.width/4*3, size.height/2, size.width/8, size.height/8);
+            }
+            if (val % 2 == 1) {
+                g.fillOval(size.width/2, size.height/2, size.width/8, size.height/8);
+            }
         }
 
     }
