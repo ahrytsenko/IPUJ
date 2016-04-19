@@ -83,19 +83,19 @@ public class Exercise_6_3 extends JPanel implements MouseListener, MouseMotionLi
             g.setColor(colorFG);
             g.drawRect(pos.x, pos.y, size.width, size.height);
             if (val > 1) {
-                g.fillOval(size.width/4, size.height/4, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4, pos.y+size.height/4, size.width/8, size.height/8);
             }
             if (val > 3) {
-                g.fillOval(size.width/4*3, size.height/4, size.width/8, size.height/8);
-                g.fillOval(size.width/4, size.height/4*3, size.width/8, size.height/8);
-                g.fillOval(size.width/4*3, size.height/4*3, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4*3, pos.y+size.height/4, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4, pos.y+size.height/4*3, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4*3, pos.y+size.height/4*3, size.width/8, size.height/8);
             }
             if (val == 6) {
-                g.fillOval(size.width/4, size.height/2, size.width/8, size.height/8);
-                g.fillOval(size.width/4*3, size.height/2, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4, pos.y+size.height/2, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/4*3, pos.y+size.height/2, size.width/8, size.height/8);
             }
             if (val % 2 == 1) {
-                g.fillOval(size.width/2, size.height/2, size.width/8, size.height/8);
+                g.fillOval(pos.x+size.width/2, pos.y+size.height/2, size.width/8, size.height/8);
             }
         }
 
