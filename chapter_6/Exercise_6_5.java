@@ -1,3 +1,18 @@
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+/*
+ * This project is a study purpose project.
+ * Everyone can use the project at his/her own reason.
+ * The project has got no warranties.
+ */
+
+/**
+ *
+ * @author ahrytsenko
+ */
 public class Exercise_6_5 extends JPanel implements MouseListener {
 
     private final int ROWS = 8;
@@ -9,7 +24,7 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
         addMouseListener(this);
     }
 
-    public paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) {
         int w = getWidth()/COLS;
         int h = getHeight()/ROWS;
 
@@ -26,14 +41,6 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
         }
     }
 
-
-
-    public void mousePressed(MouseAction e) { }
-    public void mouseReleased(MouseAction e) { }
-    public void mouseClicked(MouseAction e) { }
-    public void mouseEntered(MouseAction e) { }
-    public void mouseExited(MouseAction e) { }
-
     public static void main(String[] args) {
         JFrame wnd = new JFrame("Exercise_6_5");
         wnd.setLocation(100, 100);
@@ -41,6 +48,26 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
         wnd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         wnd.setContentPane(new Exercise_6_5());
         wnd.setVisible(true);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
     }
 
 }
