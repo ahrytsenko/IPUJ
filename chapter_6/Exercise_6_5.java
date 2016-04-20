@@ -1,5 +1,7 @@
 public class Exercise_6_5 extends JPanel implements MouseListener {
 
+    private selX, selY;
+
     public Exercise_6_5() {
         super();
         addMouseListener(this);
@@ -21,6 +23,8 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
             }
         }
     }
+
+
 
     public void mousePressed(MouseAction e) { }
     public void mouseReleased(MouseAction e) { }
