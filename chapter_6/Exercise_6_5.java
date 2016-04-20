@@ -11,8 +11,11 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
         int rows = 8, cols = 8;
         int w = getWidth()/cols;
         int h = getHeight()/rows;
+        Graphics2D g2 = (Graphics2D)g;
 
         super.paintComponent(g);
+        
+        g2.setStroke( new BasicStroke(1) );
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if ((i + j) % 2 == 0) 
@@ -22,6 +25,8 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
                 g.fillRect(w*j, h*i, w, h);
             }
         }
+        g2.setStroke( new BasicStroke(3) );
+        g2.setStroke( new BasicStroke(1) );
     }
 
 
