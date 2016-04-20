@@ -1,6 +1,8 @@
 public class Exercise_6_5 extends JPanel implements MouseListener {
 
-    private selX, selY;
+    private final int ROWS = 8;
+    private final int COLS = 8;
+    private int selectedSquare = -1;
 
     public Exercise_6_5() {
         super();
@@ -8,16 +10,13 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
     }
 
     public paintComponent(Graphics g) {
-        int rows = 8, cols = 8;
-        int w = getWidth()/cols;
-        int h = getHeight()/rows;
-        Graphics2D g2 = (Graphics2D)g;
+        int w = getWidth()/COLS;
+        int h = getHeight()/ROWS;
 
         super.paintComponent(g);
         
-        g2.setStroke( new BasicStroke(1) );
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
                 if ((i + j) % 2 == 0) 
                     g.setColor(Color.RED);
                 else
@@ -25,8 +24,6 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
                 g.fillRect(w*j, h*i, w, h);
             }
         }
-        g2.setStroke( new BasicStroke(3) );
-        g2.setStroke( new BasicStroke(1) );
     }
 
 
