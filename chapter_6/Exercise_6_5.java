@@ -6,7 +6,20 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
     }
 
     public paintComponent(Graphics g) {
+        int rows = 8, cols = 8;
+        int w = getWidth()/cols;
+        int h = getHeight()/rows;
+
         super.paintComponent(g);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if ((i + j) % 2 == 0) 
+                    g.setColor(Color.RED);
+                else
+                    g.setColor(Color.BLACK);
+                g.fillRect(w*j, h*i, w, h);
+            }
+        }
     }
 
     public void mousePressed(MouseAction e) { }
@@ -16,10 +29,11 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
     public void mouseExited(MouseAction e) { }
 
     public static void main(String[] args) {
-        JFrame wnd = new JFrame();
+        JFrame wnd = new JFrame("Exercise_6_5");
         wnd.setLocation(100, 100);
         wnd.setSize(320, 320);
         wnd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        wnd.setContentPane(new Exercise_6_5());
         wnd.setVisible(true);
     }
 
