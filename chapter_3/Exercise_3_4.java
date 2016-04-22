@@ -25,46 +25,57 @@ This works for any Unicode character.
 class Exercise_3_4 {
     
     public static void main(String[] args) {
-        
-        String inputString;
+
+        BrakeUp brakeUp = new BrakeUp();
         
         System.out.println("Enter your string, please.");
-        inputString = TextIO.getln();
-        
-        getWord(inputString);
-        
-    }
-
-    public static void getWord(String value) {
-
-        // if value is an empty string then exit
-        value = value.trim();
-        if (value.length() == 0) return;
-
-        // seek for the first alphabet character
-        // store index of the 1st alpha char in indexFrom
-        int i = 0, indexFrom = 0;
-        while ((i < value.length()) && (!Character.isLetter(value.charAt(i)))) {
-            i++;
-        }
-        
-        // if there is no alpha chars then exit
-        if (indexFrom == value.length()) return;
-        
-        // save index of the 1st alpha char
-        indexFrom = i;
-        
-        // seek for the first non-alpha character
-        while ((i < value.length()) && (Character.isLetter(value.charAt(i)))) {
-            i++;
-        }
-        
-        // print extracted Word
-        System.out.println(value.substring(indexFrom, i));
-        
-        // extract next word from the string
-        getWord(value.substring(i, value.length()));
+        brakeUp.setString(TextIO.getln());
+        brakeUp.brakeUpTotWords();
         
     }
 
-}
+    private class BrakeUp {
+        
+        private String aString;
+        
+        public BrakeUp(String aString) { this.aString = aString; }
+        
+        public void setString(String aString) { this.aString = aString; }
+        
+        public void brakeUpToWords() { this.brakeUpToWords(this.aString); }
+        
+        public void brakeUpTotWords(String value) {
+    
+            // if value is an empty string then exit
+            value = value.trim();
+            if (value.length() == 0) return;
+    
+            // seek for the first alphabet character
+            // store index of the 1st alpha char in indexFrom
+            int i = 0, indexFrom = 0;
+            while ((i < value.length()) && (!Character.isLetter(value.charAt(i)))) {
+                i++;
+            }
+            
+            // if there is no alpha chars then exit
+            if (indexFrom == value.length()) return;
+            
+            // save index of the 1st alpha char
+            indexFrom = i;
+            
+            // seek for the first non-alpha character
+            while ((i < value.length()) && (Character.isLetter(value.charAt(i)))) {
+                i++;
+            }
+            
+            // print extracted Word
+            System.out.println(value.substring(indexFrom, i));
+            
+            // extract next word from the string
+            getWord(value.substring(i, value.length()));
+            
+        } // brakeUpTotWords
+        
+    } // class BrakeUp
+
+} // class Exercise_3_4
