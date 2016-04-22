@@ -18,27 +18,8 @@ public class Exercise_4_4 {
         System.out.println("Total On Dice     Average Number of Rolls");
         System.out.println("-------------     -----------------------");
         for (int i = 2; i <= 12; i++) 
-            System.out.printf("%8d %22.4f\n", i, takeExperiment(MAX_ATTEMPTS, i));
+            System.out.printf("%8d %22.4f\n", i, de.takeExperiment(i));
     }
 
-    
 }
 
-public class DiceExperiment extend Dice {
-    
-    private int attempts; 
-
-    public DiceExperiment() { this(10, 2); }
-    
-    public DiceExperiment(int appempts, int diceAmount)
-
-    public double takeExperiment(int attempts, int desiredValue) {
-        double average = 0;
-        for (int j = 0; j < attempts; j++) {
-            average += (double)rollDice(desiredValue) / attempts;
-        }
-        return average;
-    }
-
-    
-}
