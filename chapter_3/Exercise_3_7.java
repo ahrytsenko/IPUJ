@@ -38,6 +38,10 @@ public class Exercise_3_7 {
         System.out.printf("I've checked %d random people before I find 365 different birthdays.\n", task3());
     }
     
+    /**
+     * How many random people do you have to select before you find three people 
+     * who share the same birthday?
+     */
     public static int task1() {
         boolean[][] bdArray = new boolean[2][365];
         int attempts = 0;
@@ -56,8 +60,12 @@ public class Exercise_3_7 {
         }
         
         return attempts;
-    }
+    } // task1
     
+    /**
+     * Suppose you choose 365 people at random.
+     * How many different birthdays will they have?
+     */
     public static int task2() {
         boolean[] bdArray = new boolean[365];
         int differentDates = 0;
@@ -71,8 +79,12 @@ public class Exercise_3_7 {
         }
         
         return differentDates;
-    }
-    
+    } // task2
+
+    /**
+     * How many different people do you have to check before you've found at least one person 
+     * with a birthday on each of the 365 days of the year?
+     */
     public static int task3() {
         boolean[] bdArray = new boolean[365];
         int untakenDates = 365;
@@ -88,5 +100,5 @@ public class Exercise_3_7 {
         }
         
         return attempts;
-    }
-}
+    } // task3
+} // Exercise_3_7
