@@ -6,6 +6,7 @@ public class Dice extend Die {
      * @param diceAmount - int, amount of dice in a set
      */
     public Dice(int diceAmount) {
+        super();
         if (diceAmount < 1) throw new IllegalArgumentException("Number of dice shoud be at least 1");
         this.diceAmount = diceAmount;
     }
