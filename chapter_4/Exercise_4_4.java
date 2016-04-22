@@ -13,13 +13,13 @@ public class Exercise_4_4 {
     
     public static void main(String[] args) {
 
-        DiceExperiment de = new DiceExperiment(MAX_ATTEMPTS);
+        DiceExperiment de = new DiceExperiment(MAX_ATTEMPTS, 2);
         
         System.out.println("Total On Dice     Average Number of Rolls");
         System.out.println("-------------     -----------------------");
         for (int i = 2; i <= 12; i++) 
             System.out.printf("%8d %22.4f\n", i, de.takeExperiment(i));
-    }
+    } // main
 
-}
+} // Exercise_4_4
 
