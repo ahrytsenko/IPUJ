@@ -13,11 +13,20 @@ import javax.swing.*;
  *
  * @author ahrytsenko
  */
-public class Exercise_6_5 extends JPanel implements MouseListener {
+public class Exercise_6_5 extends JPanel implements MouseListener, MouseMotionListener {
 
     private final int ROWS = 8;
     private final int COLS = 8;
-    private int selectedSquare = -1;
+    private int selectedSquare = 23;
+
+    public static void main(String[] args) {
+        JFrame wnd = new JFrame("Exercise_6_5");
+        wnd.setLocation(100, 100);
+        wnd.setSize(320, 340);
+        wnd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        wnd.setContentPane(new Exercise_6_5());
+        wnd.setVisible(true);
+    }
 
     public Exercise_6_5() {
         super();
@@ -39,15 +48,11 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
                 g.fillRect(w*j, h*i, w, h);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        JFrame wnd = new JFrame("Exercise_6_5");
-        wnd.setLocation(100, 100);
-        wnd.setSize(320, 320);
-        wnd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        wnd.setContentPane(new Exercise_6_5());
-        wnd.setVisible(true);
+        
+        if (selectedSquare != -1) {
+            g.setColor(Color.CYAN);
+            g.drawRect((selectedSquare % COLS)*w, (selectedSquare / ROWS)*h, w, h);
+        }
     }
 
     @Override
@@ -56,6 +61,12 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        int cel = e.getY() / (getHeight()/ROWS)*COLS + e.getX() / (getHeight()/COLS);
+        if (selectedSquare == cel) 
+            selectedSquare = -1;
+        else
+            selectedSquare = cel;
+        repaint();
     }
 
     @Override
@@ -64,10 +75,22 @@ public class Exercise_6_5 extends JPanel implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+       
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        
     }
 
 }
