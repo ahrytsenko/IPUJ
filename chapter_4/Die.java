@@ -9,4 +9,4 @@ public class Die {
         return (int)(Math.random()*6) + 1;
     } // rollDie
     
-} // class Die
+} // class Die 
