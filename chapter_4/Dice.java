@@ -1,4 +1,4 @@
-public class Dice extend Die {
+public class Dice extends Die {
     private int diceAmount;
     
     /**
@@ -22,10 +22,11 @@ public class Dice extend Die {
         if (desiredValue < diceAmount || desiredValue > diceAmount*6) throw new IllegalArgumentException();
         
         int attempts = 0;
+        int value;
         do {
-            int value = 0;
+            value = 0;
             for (int i = 0; i < diceAmount; i++) value += rollDie();
-            attempts++
+            attempts++;
         } while (value != desiredValue);
         
         return attempts;
