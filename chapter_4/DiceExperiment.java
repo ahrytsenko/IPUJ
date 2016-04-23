@@ -1,4 +1,4 @@
-public class DiceExperiment extend Dice {
+public class DiceExperiment extends Dice {
     
     private int attempts; 
     
@@ -6,7 +6,7 @@ public class DiceExperiment extend Dice {
 
     public DiceExperiment(int attempts) { this(attempts, 2); } // DiceExperiment
     
-    public DiceExperiment(int appempts, int diceAmount) {
+    public DiceExperiment(int attempts, int diceAmount) {
         super(diceAmount);
         this.attempts = attempts;
     }  // DiceExperiment
